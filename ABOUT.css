@@ -1,0 +1,96 @@
+
+.section { 
+    width: 98.8vw;
+    display: flex;
+    justify-content: space-between;
+    margin-top: -10vw;
+    align-items: center;
+    background: linear-gradient(90deg,blue 40%,red 60%);
+}
+.img {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 50vw;
+}
+.home-content {
+   
+    text-align: right;
+    padding-right: 1vw;
+    padding-left: 1vw;
+    margin-left: 0vw;
+}
+   
+.day {
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 3vw;
+    font-weight: 1vw;
+    padding-top: 0vw; 
+    padding-bottom: 0vw;
+    margin-top: 6vw;
+    padding-left: 1vw;
+    color: rgb(0, 255, 234);
+    justify-content: space-between;
+    text-align: center;
+    display: flex;
+    text-rendering: optimizeSpeed;
+    text-justify: kashida;
+    
+}
+.theme {
+    font-size: 1vw;
+    font-weight: 1vw;
+    padding-top: 0vw;
+    padding-bottom: 0vw;
+    color: rgb(255, 255, 255);
+    justify-content: space-between;
+    text-align: left;
+    display: flex;
+}
+.share {
+    font-size: 1vw;
+    font-weight: 2vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    color: rgb(255, 255, 255);
+    justify-content: space-between;
+    text-align: left;
+    display: flex;
+}
+.we {
+    font-size: 2vw;
+    font-weight: 1vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    color: rgb(255, 255, 255);
+    justify-content: space-between;
+    text-align: left;
+    display: flex;
+}
+.video {
+    width: 40vw;
+    border: 1vw solid blue;
+    border-radius: 2vw;
+    margin-left: 0vw;
+}
+.home-sci {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-sci a{ 
+    background-color: aqua;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 60px;
+    font-size: 50px;
+    text-decoration: none;
+    border: 6px solid white;
+    border-radius: 100%;
+    outline: 2px solid rgb(0, 255, 0);
+}
+.home-sci :hover {
+    color: rgb(51, 255, 0);
+}

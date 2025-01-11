@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Website</title>
+    <style>
+        body, h1, h2, h3, p, ul, li {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+    
+        body {
+            background-color: #ffffff;
+            color: #333;
+        }
+    
+        header, footer {
+            text-align: center;
+            color: white;
+            padding: 0vw;
+        }
+        .navbar1 img {
+            width: 100vw;
+            margin-top: -1vw;
+            margin-left: -2vw;
+            display: flex;
+            height: 19vw;
+        }
+        .navbar11 {
+            display: none;
+        }
+        .navbar21 {
+            display: none;
+        }
+        .navbar41 {
+            display: none;
+        }
+        .navbara {
+            width: 100%;
+            justify-content: center;
+            display: none;
+        }
+        .navbara img {
+            width: 100vw;
+            justify-content: center;
+            position: relative;
+            margin-left: -1vw;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0.2vw 0;
+            text-align: center;
+        }
+        
+        nav ul li {
+            display: inline-block;
+            margin: 0.2vw;
+        }
+        
+        .navbar2 a{
+            color: white;
+            text-decoration: none;
+            padding: 1vw 0.9vw;
+            display: block;
+            background-color: #FFA500;
+            border-radius: 1vw;
+            font-size: 1vw;
+            width: 5.6vw;
+        }
+        
+        .navbar4 a{
+            color: white;
+            text-decoration: none;
+            padding: 1vw 0.9vw;
+            display: block;
+            background-color: #FFA500;
+            border-radius: 1vw;
+            font-size: 1.2vw;
+            width: 6.5vw;
+        }
+
+        nav ul li a:hover {
+            background-color: #3498db;
+        }
+        
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .navba {
+            display: flex;
+            position: absolute;
+            margin-top: -15vw;
+            z-index: 5;
+        }
+        .navbar2 {
+        display: flex;
+        margin-top: -3.05vw;
+        margin-left: 47vw;
+
+        }
+        .navbar3 img {
+        width: 20vw;
+        height: 20vw;
+        margin-top: -13vw;
+        margin-left: 76vw;
+        position: relative;
+        z-index: 90000;
+        border: 1vw solid red;
+        border-radius: 100%;
+        }
+        .navbar4 {
+        position: absolute;
+        margin-top: 8.4vw;
+        margin-left: 8.6vw;
+        }
+        
+        header {
+        text-align: center;
+        color: white;
+        padding: 1vw;
+        z-index: 2000;
+        }
+        
+        header h1 {
+        color: #ffffff;
+        background-color: #1abc9c;
+        margin-top: -6vw;
+        padding: 1vw 1vw;
+        font-size: 3vw;
+        }
+        
+        
+        /* Ensure button stays on top */
+        .menu-toggle {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 2rem;
+            background-color: transparent;
+            border: none;
+            color: rgb(241, 107, 5);
+            cursor: pointer;
+            z-index: 1000; /* Ensure button stays on top */
+            display: none; /* Hidden by default on larger screens */
+        }
+        
+        /* Responsive design for small screens */
+        @media (max-width: 740px) {
+            .navbar21 {
+                display: flex;
+                margin-top: -33vw;
+                position: relative;
+                z-index: 200;
+                margin-left: 55vw;
+            }
+            .navbar21 a{
+                font-size: 4vw;
+            }
+            .navbar41 {
+                display: flex;
+                width: 60vw;
+                margin-left: 37vw;
+                position: relative;
+                margin-top: 12vw;
+                margin-bottom: 20vw;
+                z-index: 201;
+            }
+            .navbar41 li a{
+                color: #ffffff;
+            }
+            .navbar1{
+                display: none;
+            }
+            .navba {
+                position: fixed;
+                top: 0;
+                right: -100%; /* Hidden by default */
+                height: 100vw;
+                width: 40vw;
+                background-color: #2c3e50;
+                transition: right 0.3s ease;
+                z-index: 999; /* Menu below button */
+                flex-direction: column;
+                display: inline;
+            }
+
+            .navbar11 img {
+                width: 100%;
+                margin-top: -2vw;
+                display: none;
+                height: 19vw;
+            }
+
+            .navbara {
+                display: flex;
+                z-index: 100;
+            }
+            .navbara img{
+                z-index: 100;
+            }
+        
+            .navba.active {
+                right: 0; /* Slide into view when active */
+            }
+        
+            .navbar2 {
+                width: 42vw;
+                margin-top: 25vw;
+            }
+        
+            .navbar4 {
+                margin-top: 60vw;
+                margin-left: 0vw;
+            }
+
+            nav ul li a {
+                font-size: 3vw;
+                width: 30vw;
+                text-align: center;
+                color: white;
+                text-decoration: none;
+                margin: 1vw 1vw;
+            }
+        
+            nav ul li a:hover {
+                background-color: #3498db;
+            }
+        
+            /* Hide the school logo on small screens */
+            .navbar3 {
+                display: none;
+            }
+            .navbar3 img {
+                display: none;
+            }
+        
+            /* Show the toggle button on small screens */
+            .menu-toggle {
+                display: block;
+            }
+            header h1 {
+                margin-top: 2vw;
+            }
+        }
+        
+        /* Keep the logo visible for screens larger than 540px */
+        @media (min-width: 740px) {
+            .navbar11 {
+                display: block;
+            }
+            .navbar41 {
+                display: none;
+            }
+            .navbara img {
+                display: block;
+                z-index: 100;
+            }
+            .navbar3 {
+                display: block;
+                
+            }
+            .navbar3 img{
+                display: block;
+                
+            }
+        }
+                /* Hero Section Styles */
+        .hero {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            height: 22vw;
+            color: #fff;
+            margin: 1vw;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2vw;
+            margin-top: -11vw;
+            z-index: -1; /* Ensure this is higher than the overlay */
+            transition: background-image 1.5s ease-in-out;
+        }
+
+        .hero .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6); /* Dark transparent overlay */
+            z-index: 2; /* Ensure this is lower than the buttons */
+        }
+
+        .hero h1, .hero h2, .hero p {
+            z-index: 3;
+            margin: 0vw;
+            padding: 0.5vw 0;
+        }
+
+        .hero h1 {
+            font-size: 3vw;
+            margin-top: 3vw;
+            font-weight: bold;
+            color: aqua;
+        }
+
+        .hero h2 {
+            font-size: 3vw;
+            margin-bottom: 1vw;
+            color: #fff;
+        }
+
+        .hero p {
+            font-size: 2.5vw;
+            color: #fff;
+        }
+
+        .overlay button {
+            padding: 1vw 2vw;
+            margin: 1vw;
+            font-size: 2vw;
+            background-color: #ff6600;
+            border: none;
+            color: white;
+            border-radius: 1vw;
+            cursor: pointer;
+            pointer-events: auto; /* Ensure buttons are clickable */
+            position: relative;
+            z-index: 4; /* Ensure this is higher than the overlay */
+            transition: background 0.3s ease;
+        }
+
+        .hero button:hover {
+            background-color: #e65c00;
+        }
+
+        .hero img {
+            max-width: 100%;
+            margin-bottom: 2vw;
+        }
+
+        .announcement {
+            font-weight: bold;
+            margin-top: 3vw;
+            background-color: #ffcc00;
+            padding: 1vw;
+            font-size: 4vw;
+            border-radius: 0.5vw;
+        }
+
+        blockquote {
+            font-style: italic;
+            margin: 20px 0;
+            font-size: 2vw;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            transition: transform 0.2s;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.1);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 10px;
+            z-index: 2;
+        }
+
+        .scroll-indicator p {
+            font-size: 1.1rem;
+            color: #fff;
+        }
+
+        .scroll-indicator .arrow-down {
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+        }
+
+
+        #news-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1vw;
+            justify-content: center;
+        }
+
+        
+        .update h3 {
+            font-size: 3vw;
+            margin: 2vw 0 1vw;
+            color: #222;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .update p {
+            font-size: 2.5vw;
+            color: #555;
+            padding: 0 1.5vw 2vw;
+            line-height: 1.6;
+            font-family: 'Arial', sans-serif;
+        }
+        /* Countdown Timer */
+        #countdown {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            z-index: 10;
+        }
+
+        .navbar ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        .navbar ul li {
+            margin: 0 15px;
+        }
+
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            color: #ff6600;
+        }
+
+        /* General Styles for About Section */
+        .about {
+            padding: 0.1vw 0.1vw;
+            background-color: #e6f2ff;
+            color: #333;
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            width: 100%;
+        }
+
+        .about h2 {
+            font-size: 3vw;
+            text-align: center;
+            color: #004d99;
+            margin-bottom: 0.2vw;
+        }
+
+        footer {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            background-color: #004d99;
+            position: relative;
+            display: flex;
+        }
+        .nav4 {
+            width: 2vw;
+        }
+        .nav4 a{
+            width: 25vw;
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 1px 1px;
+            background-color: #FFA500;
+            border-radius: 0.4vw;
+            font-size: 1.2vw;
+        }
+        .nav4 h1{
+            width: 25vw;
+            color: white;
+            text-decoration: none;
+            border-radius: 0.4vw;
+            font-size: 3vw;
+        }
+        .nav3 {
+            width: 2vw;
+            margin-left: 46vw;
+        }
+        .nav3 a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            font-size: 1vw;
+        }
+        .nav33 {
+            display: block;
+            width: 5vw;
+            margin-left: -12vw;
+            margin-top: 3vw;
+        }
+        .nav33 a{
+            font-size: 2vw;
+            margin: 2vw 2vw;
+            color: white;
+        }
+        .nav1 {
+            position: relative;
+            width: 2vw;
+            margin-left: 30vw;
+        }
+        .nav1 h1{
+            color: white;
+            font-size: 3vw;
+            width: 25vw;
+        }
+        .nav1 p{
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            font-size: 1.5vw;
+            width: 15vw;
+            margin-left: 2vw;
+        }
+        .nav1 a{
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            background-color: #ffdd00;
+            font-size: 2vw;
+            display: block;
+            width: 15vw;
+            margin-left: 4vw;
+            text-align: center;
+            position: absolute;
+        }
+        
+/* Hero Section Styles */
+.hero {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 22vw;
+    color: #fff;
+    margin: 1vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2vw;
+    margin-top: -10vw;
+    position: relative;
+    z-index: -1;
+    transition: background-image 1.5s ease-in-out;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Dark transparent overlay */
+    z-index: 1; /* Ensure this is lower than the buttons */
+}
+
+.hero h1, .hero h2, .hero p {
+    z-index: 2;
+    margin: 0vw;
+    padding: 0.5vw 0;
+}
+
+.hero h1 {
+    font-size: 3vw;
+    margin-top: 3vw;
+    font-weight: bold;
+    color: aqua;
+}
+
+.hero h2 {
+    font-size: 3vw;
+    margin-bottom: 1vw;
+    color: #fff;
+}
+
+.hero p {
+    font-size: 2.5vw;
+    color: #fff;
+}
+
+.overlay button {
+    padding: 1vw 2vw;
+    margin: 1vw;
+    font-size: 2vw;
+    background-color: #ff6600;
+    border: none;
+    color: white;
+    border-radius: 1vw;
+    cursor: pointer;
+    pointer-events: auto; /* Ensure buttons are clickable */
+    position: relative;
+    z-index: 199; /* Ensure this is higher than the overlay */
+    transition: background 0.3s ease;
+}
+
+.hero button:hover {
+    background-color: #e65c00;
+}
+
+.announcement {
+    font-weight: bold;
+    margin-top: 3vw;
+    background-color: #ffcc00;
+    padding: 1vw;
+    font-size: 4vw;
+    border-radius: 0.5vw;
+}
+
+/* Ensure the buttons are not overlapped */
+.not {
+    position: relative;
+    z-index: 200; /* Higher than the overlay */
+}
+
+/* Contact Form Section */
+section {
+    padding: 1vw 0.5vw;
+    background-color: #f4f6f7;
+    margin-top: -10vw;
+    z-index: -10;
+}
+section p {
+    font-size: 2vw;
+}
+.contact-form {
+    background-color: #fff;
+    border-radius: 1.5vw;
+    flex-wrap: wrap;
+    box-shadow: 0 0.5vw 2vw rgba(0, 0, 0, 0.2);
+    display: flex;
+    gap: 5vw;
+}
+#contactForm {
+    width: 45vw;
+}
+.contact-form h3 {
+    font-size: 4vw;
+    margin: 1vw 0.5vw;
+    color: #2d89e5;
+    text-align: center;
+}
+.contact-form label {
+    font-size: 3vw;
+    color: #2d3e50;
+    margin-top: 2vw;
+    margin: 1vw 1vw;
+}
+.contact-form input, .contact-form textarea {
+    text-align: center;
+    display: flex;
+    padding: 0.5vw 0.5vw;
+    font-size: 2vw;
+    width: inherit;
+    border: 0.2vw solid #dfe4ea;
+    border-radius: 1vw;
+    margin-left: 1vw;
+    margin-top: 1vw;
+    transition: border-color 0.4s ease;
+}
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: #2d89e5;
+}
+#message {
+    height: 6vw;
+}
+.contact-form input[type="submit"] {
+    background-color: #1abc9c;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 2vw;
+    padding: 0.5 1vw;
+    border-radius: 1vw;
+    transition: background-color 0.4s ease;
+    margin-top: 1vw;
+}
+.contact-form input[type="submit"]:hover {
+    background-color: #20c997;
+}
+
+/* Contact Information Section */
+.school-contact-info {
+    background-color: #fff;
+    padding: 1vw;
+    border-radius: 1vw;
+    box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.15);
+    margin-top: 2vw;
+}
+.school-contact-info h3 {
+    font-size: 3vw;
+    margin-bottom: 1vw;
+    color: #3498db;
+}
+.school-contact-info p {
+    font-size: 2vw;
+    margin: 0.5vw 0;
+}
+
+/* Map Section */
+.map-container {
+    margin-top: 1vw;
+    text-align: center;
+    
+}
+.map-container iframe {
+    width: 100%;
+    height: 30vw;
+    border: 0;
+    height: 18vw;
+    border-radius: 12px;
+}
+
+/* Social Media Section */
+.social-media {
+    margin-top: 30px;
+    text-align: center;
+}
+.social-media a {
+    margin: 0 15px;
+    font-size: 1.2rem;
+    color: #2d3e50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.social-media a:hover {
+    color: #16a085;
+}
+
+/* Responsive Styles */
+@media (max-width: 740px) {
+    section {
+        
+        width: 100%;
+    }
+
+    section h2 {
+        font-size: 5vw;
+        margin-bottom: 2rem;
+    }
+    .sub {
+        width: 100%;
+        box-shadow: 0 0.5vw 2vw rgba(0, 0, 0, 0.2);
+    }
+    .in1 {
+        width: 80vw;
+        box-shadow: 0 0.5vw 2vw rgba(0, 0, 0, 0.2);}
+
+    .contact-form {
+        width: 75vw;
+        padding: 50px;
+        margin: 40px auto;
+    }
+
+    .contact-form h3 {
+        font-size: 2.2rem;
+    }
+    .contact-form textarea {
+        height: 220px;
+    }
+}
+
+
+    </style>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <nav class="navbar1">
+            <img src="image/head.png" alt="Header Image">
+        </nav>
+
+        <div class="navba">
+            <!-- Navigation Bar -->
+            <nav class="navbar2">
+                <ul>
+                    
+                        <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                        <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="https://www.linkedin.com" target="_blank"><i class="fab fa-tiktok"></i>tiktok</a></li>
+                        <li><a href="https://www.linkedin.com" target="_blank"><i class="fab fa-whatsapp"></i> whatsup</a></li>
+                        <li><a href="https://www.linkedin.com" target="_blank"><i class="fab fa-youtube"></i>youtube</a></li>
+                    
+                </ul>
+            </nav>
+            <nav class="navbar4">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="Ministries.html">Ministries</a></li>
+                    <li><a href="Sermons.html">Sermons</a></li>
+                    <li><a href="Blog.html">Blog</a></li>
+                    <li><a href="Gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                </ul>
+            </nav>
+        </div>
+        <nav class="navbar3">
+            <ul class="navbar3">
+                <li><img src="image/logo.png" alt="School Logo"></li>
+            </ul>
+        </nav>
+        <nav class="navbara">
+            <img src="image/head1.png">
+        </nav>
+
+        <nav class="navbar21">
+            <ul>
+                
+                    <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://www.linkedin.com" target="_blank"><i class="fab fa-tiktok"></i></a></li>
+                    <li><a href="https://www.linkedin.com" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                    <li><a href="https://www.linkedin.com" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                
+            </ul>
+        </nav>
+        <nav class="navbar41">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="Ministries.html">Ministries</a></li>
+                <li><a href="Sermons.html">Sermons</a></li>
+                <li><a href="Blog.html">Blog</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Main Content Section -->
+    <section>
+        <div class="contact-form">
+            
+            <form id="contactForm" action="https://formsubmit.co/jacksonparcker2@gmail.com" method="POST" class="su">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="about.html">
+                <input type="hidden" name="_subject" value="contact us!">
+
+                <h3 class="con">Contact Form</h3>
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                
+                <label for="phone">Your Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="4" required placeholder="Enter your message here"></textarea>
+                <label id="success" style="display: none; color: green; margin-top: 2px;">sent successfully!</label>
+                <input type="submit" value="Send Message">
+                
+            </form>
+            <div class="in1">
+            <div class="school-contact-info">
+                <h3>Our Contact Information</h3>
+                <p><strong>Phone:</strong> 0784917206</p>
+                <p><strong>Whatsup:</strong> 0705710860</p>
+                <p><strong>Email:</strong> DLC33320@gmail.com</p>
+                <p><strong>Address:</strong> KIREKE, Kampala Uganda</p>
+            </div>
+            <!-- Google Map Embed Section -->
+            <div class="map-container">
+                <h3>Our Location</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d291.8662636075857!2d32.64901603720521!3d0.3510019141957554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177db9113a69d35b%3A0xcbdf5b3cf2d8a8a4!2sDaylight%20Church!5e0!3m2!1sen!2sug!4v1708252503354!5m2!1sen!2sug" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>            </div>
+            
+            </div>
+        </div>
+        <!-- Social Media Links Section -->
+        <div class="social-media">
+            <h3>Follow Us</h3>
+            <p>Stay connected with us on social media:</p>
+            <a href="https://facebook.com/ourschool" target="_blank">Facebook</a> |
+            <a href="https://twitter.com/ourschool" target="_blank">Twitter</a> |
+            <a href="https://instagram.com/ourschool" target="_blank">Instagram</a> |
+            <a href="https://linkedin.com/ourschool" target="_blank">LinkedIn</a>
+        </div>
+    </section>
+
+
+    <footer>
+        <nav class="nav4">
+         <ul>
+             <li><h1>other links</h1></li>
+             <li><a href="index.html">Home</a></li>
+             <li><a href="about.html">About us</a></li>
+             <li><a href="Ministries.html">Ministries</a></li>
+             <li><a href="Sermons.html">Sermons</a></li>
+             <li><a href="Blog.html">Blog</a></li>
+             <li><a href="Gallery.html">Gallery</a></li>
+         </ul>
+     </nav>
+     <nav class="nav3">
+         <ul>
+             <li><h1 style="font-size: 3vw; color: #ffffff;">Location</h1></li>
+             <li><p>About us</p></li>
+             <li><p>Ministries</p></li>
+         </ul>
+     </nav>
+     <ul class="nav33">
+                         
+         <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+         <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+         <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+         <li><a href="https://www.linkedin.com" target="_blank"><i class="fab fa-tiktok"></i></a></li>
+         <li><a href="https://www.linkedin.com" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+         <li><a href="https://www.linkedin.com" target="_blank"><i class="fab fa-youtube"></i></a></li>
+     
+     </ul>
+     <nav class="nav1">
+         <ul>
+             <li><h1>Contact us</h1></li>
+             <li><p>Gmail:DLC33320@gmail.com</p></li>
+             <li><p>Phone:0784917206</p></li>
+             <li><p>whatsup:0705710860</p></li>
+             <li><div id="google_translate_element" class="footer-language"></div></li>
+             <li><a href="Contact.html"> contact us</a></li>
+         </ul>
+     </nav>
+     </footer><!-- Add the Font Awesome link for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</body>
+</html>
